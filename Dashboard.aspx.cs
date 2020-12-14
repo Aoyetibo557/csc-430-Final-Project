@@ -74,7 +74,7 @@ namespace BMI_Web_API__ASP.NET_FRAMEWORK_
                         }
 
                         //Show date
-                        getDate();
+                        //getDate();
                         //Other Functions
                         other_funcs();
 
@@ -89,7 +89,7 @@ namespace BMI_Web_API__ASP.NET_FRAMEWORK_
 
         public void getDate()
         {
-            string[] dayArr = { "MON", "TUES", "WED", "THUR", "FRI", "SAT", "SUN" };
+            string[] dayArr = { "SUN" , "MON", "TUES", "WED", "THUR", "FRI", "SAT" };
             string[] monthArr = { "JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC" };
 
             //Print Current Date Time
@@ -98,9 +98,8 @@ namespace BMI_Web_API__ASP.NET_FRAMEWORK_
             int month = dateTime.Month;
             int yr = dateTime.Year;
 
-            //dateTimeLabel.Text = day + " " + month + " " + yr;
-            //dateTimeLabel.Text = monthArr[month-1] + " - " + dayArr[day-1] + " - " + yr;
-            dayTextBox.Text = dayArr[day];
+            
+            dayTextBox.Text = dayArr[day-1];
             monthTextBox.Text = monthArr[month - 1] + " " + day.ToString();
             yearTextBox.Text = yr.ToString();
             timeTextBox.Text = dateTime.ToString("h:mm:ss tt");
@@ -191,10 +190,9 @@ namespace BMI_Web_API__ASP.NET_FRAMEWORK_
                 alertLabel.Text = "Error Adding Friend";
             }
         }
-
-
         private void loadFriendList()
         {
+
             using (SqlCommand loadFriendListCommand = new SqlCommand("SELECT friendList FROM userAccounts WHERE username like @username", conn))
             {
 
@@ -247,5 +245,45 @@ namespace BMI_Web_API__ASP.NET_FRAMEWORK_
 
             }
         }
+
+        protected void removeFriendMethod(object e, EventArgs args)
+        {
+            using (SqlCommand removefriendCommand = new SqlCommand("SELECT friendList FROM userAccounts WHERE username like @username", conn))
+            {
+
+                SqlParameter user__param = removefriendCommand.Parameters.Add("@userId", SqlDbType.Int, 100);
+                user__param.Value = Request.QueryString["UsernameValue"];
+
+                removefriendCommand.Prepare();
+
+                SqlDataAdapter currentFfriendlist = new SqlDataAdapter(removefriendCommand);
+                DataTable curr_friendTable = new DataTable();
+                currentFfriendlist.Fill(curr_friendTable);
+
+
+                DataTable friend_Table = new DataTable();
+
+                foreach (DataRow row in curr_friendTable.Rows)
+                {
+                    string ls = row["friendList"].ToString();
+                    string[] nl = ls.Split(':');
+
+                    //remove duplicate in the array
+                    string[] dist = nl.Distinct().ToArray();
+                    int len = dist.Length - 1;
+
+                    //Loop to print out all the friends in the DB
+                    for (int i = 1; i <= len; i++)
+                    {
+                        //Converting to int
+                        int temp = Int32.Parse(dist[i]);
+
+                    }
+
+                }
+            }
+        }
+     
+
     }
 }

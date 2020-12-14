@@ -39,7 +39,8 @@
             </div>
 
              <div>
-                <asp:Button ID="createAccount" Text="CREATE ACCOUNT" runat="server" CssClass="_primary_btn" />
+                 <a href="Register.aspx" class="_primary_btn">CREATE ACCOUNT</a>
+                <%--<asp:Button ID="createAccount" Text="CREATE ACCOUNT" runat="server" CssClass="_primary_btn" />--%>
              </div>
         </form>
         <div class="_section_img_div">

@@ -14,20 +14,16 @@
         <div id="sideBar" class="_side_bar">
             <div id="topSideBar" class="_top_side_bar">
                 <h3 class="_current_username"><asp:Label ID="usernameTextBox" Text="" runat="server" /></h3>
-                <%--<img src="www.placeholder/200/200" alt="Avatar"/>--%>
-                <%-- <form runat="server"> --%>
+               
                     <asp:Label ID="fullnameTextBox" Text="" runat="server" CssClass="_username" />
-                    <%--<div>
-                       <asp:Button ID="logoutBtn" Text="LOGOUT" runat="server" OnClick="logoutMethod" CssClass="_inner_links" />
-                    </div>--%>
-               <%-- </form> --%>
+                 
                
             </div>
             <div id="bottom_sidebar" class="_bottom_side_bar">
                 <p><a href="#" class="_inner_links active" onclick="addActive()">OVERVIEW</a></p>
                 <p><a id="buds" href="#sect2" class="_inner_links" onclick="addActive()">BUDDIES</a></p>
-                <p><a id="alerts" href="#" class="_inner_links" onclick="addActive()" >ALERTS</a></p>
-                <p><a id="awards" href="#" class="_inner_links" onclick="addActive()" >AWARDS</a></p>
+                <p><a id="calc" href="Calculator.aspx" class="_inner_links" onclick="addActive()" >CALCULATOR</a></p>
+                <p><a id="workOuts" href="#" class="_inner_links" onclick="addActive()" >WORKOUTS</a></p>
                 <p><a id="setts" href="#" class="_inner_links " onclick="addActive()" >SETTINGS</a></p>
                 <p><asp:Button ID="Button1" Text="LOGOUT" runat="server" OnClick="logoutMethod" CssClass="_logout_btn" /></p>
             </div>
@@ -100,22 +96,31 @@
             </div>
 
             <div id="outputField">
-                <asp:GridView ID="test1GridView" runat="server" CssClass="friendlist_girdView" Width="950px"></asp:GridView>
-
+                <asp:GridView ID="test1GridView" runat="server" CssClass="friendlist_girdView" Width="950px"></asp:GridView>                  
             </div>
 
             <div id="hidden_fields" class="_friend_add_div">
-                <asp:TextBox ID="friendUsernameTextBox" Text="" runat="server" CssClass="_friend_textBox"  ></asp:TextBox>
-                <asp:Button ID="addfriendButton" Text="Add Friend" runat="server" OnClick="findFriendMethod" CssClass="_friend_button"  />
+               
+                    <asp:TextBox ID="friendUsernameTextBox" Text="" runat="server" CssClass="_friend_textBox"  ></asp:TextBox>
+                    <asp:Button ID="addfriendButton" Text="Add Friend" runat="server" OnClick="findFriendMethod" CssClass="_friend_button"  />
+
+                    <asp:TextBox ID="removeFriendTextBox" Text="" runat="server" CssClass="_friend_textBox"  ></asp:TextBox>
+                    <asp:Button ID="Button2" Text="Remove Friend" runat="server"  CssClass="_friend_button" OnClick="removeFriendMethod"  />
+               
             </div>
 
         </div>
     </section>
+
        </form>
     <script type="text/javascript">
         //To prevent page from going back to dashboard after logout
         window.history.forward(-1);
+        event.preventDefault();
+        event.stopPropagation();
     </script>
-    <script src="script.js"></script>
+
+    <script src="../Scripts/jquery-1.4.1.js"></script>
+    <script src="script.js" type="text/javascript"></script>
 </body>
 </html>

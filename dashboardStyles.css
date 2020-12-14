@@ -200,15 +200,19 @@ body {
     width: 100%;
     background: #04095B;
     position: relative;
+    
 }
-._buddies_section div{
+._buddies_section>div{
     display: flex;
     flex-wrap:wrap;
     padding:15px;
     flex-direction:column;
-    justify-content:flex-start;
+    justify-content:center;
     align-items:center;
     color:white;
+    width: 80%;
+    position:relative;
+    left: 15%;
 }
 #_bud_head{
     display:flex;
@@ -226,6 +230,7 @@ body {
     color: rgba(255, 255, 255, 0.48);
     font-family: 'Trebuchet MS';
     padding: 8px;
+    padding-bottom: 55px;
 }
 ._buddies_p{
     font-family: 'Trebuchet MS';
@@ -236,16 +241,23 @@ body {
     
 }
 
-._friend_add_div {
-    display: flex;
+._friend_add_div{
+    display: inline-flex;
     flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items:center;
+    padding: 8px;
+    width: 70%;
 }
+
 ._friend_textBox{
     font-size: 16px;
     padding: 8px;
     color: #444;
     border:none;
     margin-bottom: 8px;
+    background: #ccc;
 }
 ._friend_button {
     display: flex;
@@ -255,7 +267,7 @@ body {
     background: rgba(11, 22, 196, 0.74);
     color: white;
     border: none;
-    width: 100%;
+    /*width: 100%;*/
     font-size:17px;
     outline: none;
 }
@@ -270,6 +282,7 @@ body {
     padding: 10px;
     width: 100%;
     border:none;
+
 }
 
 .friendlist_girdView td {
@@ -283,18 +296,17 @@ table.friendlist_girdView td:nth-child(1),
 table.friendlist_girdView td:nth-child(2),
 table.friendlist_girdView td:nth-child(3),
 table.friendlist_girdView td:nth-child(4) {
-    text-align: center;
+    text-align: right;
+    padding: 55px;
 }
 
 .friendlist_girdView th {
-    display:none;
     padding: 8px 3px;
     color: #fff;
-    background: rgba(232, 15, 58, 0.90);
     border-left: solid 1px #525252;
     font-size: 1em;
     text-transform: uppercase;
-    text-align:left;
+    text-align:center;
     font-family: 'Trebuchet MS';
     
 }
@@ -311,9 +323,12 @@ table.friendlist_girdView td:nth-child(4) {
 }
 ._logout_btn:hover {
     opacity: 0.9;
-    /*padding: 5px;*/
     transition: 0.5s;
     text-decoration: overline;
     text-decoration-color: rgba(255, 255, 255, 0.45);
     cursor:pointer;
+}
+section{
+    border-bottom:1px solid rgba(255, 255, 255, 0.19);
+    border-bottom-style:groove;
 }

@@ -1,0 +1,179 @@
+﻿body {
+    padding: 0;
+    margin: 0;
+}
+._cal_header {
+    display:inline-flex;
+    flex-wrap:wrap;
+    flex-direction: row;
+    justify-content:space-evenly;
+    align-items:center;
+    background: #04095B;
+    padding:5px;
+    width:100%;
+   border-bottom: solid 1px rgba(255, 255, 255, 0.25);
+}
+._cal_header h4 {
+    font-weight: 700;
+    font-size: 1.4em;
+    color: rgba(255, 255, 255, 0.60);
+    text-transform: uppercase;
+    font-family: Bahnschrift;
+}
+._cal_header a{
+    text-decoration:none;
+    padding:5px;
+    color: rgba(255, 255, 255, 0.60);
+    font-size:21px;
+    font-weight: 400;
+    font-family: Bahnschrift;
+}
+._cal_header a:hover{
+    text-decoration:overline;
+    transition:0.5s;
+}
+
+._calc_section {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background: #04095B;
+    width: 100%;
+}
+
+
+._calcMainDiv {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 60%;
+    height: 100vh;
+    padding: 8px;
+}
+
+._calcMainDiv #calcTop {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+}
+
+.box {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #555;
+    height: 30vh;
+    width: 40%;
+    padding: 10px;
+    margin: 3px;
+    background: rgba(2, 4, 41, 0.87);
+}
+
+._box_hover:hover {
+    filter: invert(1);
+    transition: 0.5s;
+}
+.active{
+    filter: invert(1);
+}
+
+.box p {
+    font-weight: 700;
+    font-size: 1.4em;
+    color: rgba(255, 255, 255, 0.60);
+    text-transform: uppercase;
+    font-family: Bahnschrift;
+}
+
+._calcMainDiv #calcMiddle {
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+._height_box {
+    background: #888;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    width: 50%;
+    height: 15vh;
+    margin: auto 25%;
+    background: rgba(2, 4, 41, 0.87);
+}
+._height_box h5{
+    font-weight: 700;
+    font-size: 1.4em;
+    color: rgba(255, 255, 255, 0.60);
+    text-transform: uppercase;
+    font-family: Bahnschrift;
+}
+
+._calcMainDiv #calcBottom {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 12px;
+}
+
+.gender_icons {
+    width: 150px;
+    height: 150px;
+    font-weight: 800;
+    color: white;
+    filter: invert(1);
+    outline: none;
+}
+
+.alt_btn {
+    background: #04095B;
+    border-radius: 30%;
+    padding: 20px;
+    border: none;
+    color: whitesmoke;
+    outline: none;
+    font-weight: 500;
+    font-size: 0.90em;
+}
+.alt_btn:hover{
+    cursor:pointer;
+    filter: invert(1);
+    transition: 0.5s;
+}
+
+.alt_btn:active {
+    background: red;
+}
+
+._text {
+    font-weight: 400;
+    font-size: 30px;
+    color: #fff;
+    padding: 8px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+._output_div{
+    display:flex;
+    flex-wrap:wrap;
+    flex-direction:column;
+    background: red;
+    width:35%;
+    padding: 8px;
+}
+._height_label {
+    color: white;
+    font-family: Bahnschrift;
+    font-size: 21px;
+}
